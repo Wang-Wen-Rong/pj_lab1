@@ -4,7 +4,10 @@ package cli
 package application
 package domain
 package infrastructure
+package "main.ts" as entry
+entry --> cli : bootstrap
 cli --> application
+cli --> domain : arguments / queries
 application --> domain
 infrastructure --> domain
 cli --> infrastructure : adapters

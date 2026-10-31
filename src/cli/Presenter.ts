@@ -31,7 +31,7 @@ export class Presenter {
       "  parent=" +
       (p === d.root ? "svg" : "g#" + p.id) +
       "\n  " +
-      s.summary()
+      s.details().join("\n  ")
     );
   }
 }

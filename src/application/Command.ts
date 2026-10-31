@@ -5,6 +5,9 @@ export abstract class Command {
   private before?: Document;
   private after?: Document;
   private message = "";
+  get description(): string {
+    return this.message;
+  }
   execute(document: Document): { document: Document; message: string } {
     const draft = document.clone();
     this.message = this.apply(draft);

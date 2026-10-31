@@ -50,7 +50,7 @@ export class Editor {
     this.current = c.undo();
     this.past.pop();
     this.future.push(c);
-    return "edit undone";
+    return "edit undone: " + c.description;
   }
   redo(): string {
     this.document;
@@ -60,6 +60,6 @@ export class Editor {
     this.current = c.redo();
     this.future.pop();
     this.past.push(c);
-    return "edit redone";
+    return "edit redone: " + c.description;
   }
 }

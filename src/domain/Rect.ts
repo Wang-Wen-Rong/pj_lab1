@@ -13,4 +13,10 @@ export class Rect extends Shape {
   clone(): Rect {
     return this.copyTo(new Rect(this.id, [...this.values.values()]));
   }
+  override summary(): string {
+    return super
+      .summary()
+      .replace(/\bwidth=/g, "w=")
+      .replace(/\bheight=/g, "h=");
+  }
 }

@@ -24,6 +24,9 @@ export class Text extends Shape {
     super.set(attr, value);
   }
   override summary(): string {
-    return super.summary() + " " + JSON.stringify(this.content);
+    return `text#${this.id} (${this.values.get("x")},${this.values.get("y")}) ${JSON.stringify(this.content)}`;
+  }
+  override details(): string[] {
+    return [...super.details(), `text=${JSON.stringify(this.content)}`];
   }
 }

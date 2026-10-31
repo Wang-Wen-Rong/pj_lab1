@@ -94,4 +94,10 @@ export abstract class Shape {
       [...this.attributes].map(([k, v]) => k + "=" + v).join(" ")
     );
   }
+  details(): string[] {
+    const geometry = [...this.values].map(([k, v]) => `${k}=${v}`).join(" ");
+    return [geometry, ...[...this.styles].map(([k, v]) => `${k}=${v}`)].filter(
+      Boolean,
+    );
+  }
 }

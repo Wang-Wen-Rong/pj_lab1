@@ -34,7 +34,7 @@ export class Cli {
       const handlers: Record<string, () => string> = {
         help: () => {
           this.count(a, 0);
-          return "init [w] [h]\nread <file.svg>\nsave [file.svg]\ncanvas [w h]\ncreate <rect|circle|ellipse|line|text|g> <id> [params] [in <containerId>]\ndelete <id>\nmove <id> <dx> <dy>\nscale <id> <factor>\nset <id> <attr> <value>\ngroup <newGid> <id1> [id2 ...]\nungroup <gid>\naddto <gid> <id>\nfront <id>\nback <id>\ntree [id]\nshow <id>\nundo\nredo";
+          return 'init [w] [h]\nread <file.svg>\nsave [file.svg]\ncanvas [w h]\ncreate rect <id> <x> <y> <w> <h> [fill] [in <containerId>]\ncreate circle <id> <cx> <cy> <r> [fill] [in <containerId>]\ncreate ellipse <id> <cx> <cy> <rx> <ry> [fill] [in <containerId>]\ncreate line <id> <x1> <y1> <x2> <y2> [stroke] [in <containerId>]\ncreate text <id> <x> <y> "content" [in <containerId>]\ncreate g <id> [in <containerId>]\ndelete <id>\nmove <id> <dx> <dy>\nscale <id> <factor>\nset <id> <attr> <value>\ngroup <newGid> <id1> [id2 ...]\nungroup <gid>\naddto <gid> <id>\nfront <id>\nback <id>\ntree [id]\nshow <id>\nundo\nredo';
         },
         init: () => {
           this.count(a, 0, 2);

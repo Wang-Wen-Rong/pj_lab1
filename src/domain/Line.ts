@@ -13,4 +13,7 @@ export class Line extends Shape {
   clone(): Line {
     return this.copyTo(new Line(this.id, [...this.values.values()]));
   }
+  override summary(): string {
+    return `line#${this.id} (${this.values.get("x1")},${this.values.get("y1")}) -> (${this.values.get("x2")},${this.values.get("y2")})`;
+  }
 }

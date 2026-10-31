@@ -158,13 +158,13 @@ test("IO boundaries, canvas query and failed IO preserve history", () => {
     c.run("canvas");
     c.run("tree");
     c.run("show r");
-    assert.equal(c.run("undo"), "edit undone");
+    assert.match(c.run("undo"), /^edit undone:/);
     c.run("redo");
     assert.match(
       c.run('read "' + join(dir, "missing.svg") + '"'),
       /cannot read file/,
     );
-    assert.equal(c.run("undo"), "edit undone");
+    assert.match(c.run("undo"), /^edit undone:/);
     c.run("redo");
     assert.match(c.run('save "' + path + '"'), /^saved/);
     assert.equal(c.run("undo"), "error: undo not allowed after io command");

@@ -1,1 +1,23 @@
-{"name":"svg-editor-lab1","version":"0.1.0","private":true,"type":"module","scripts":{"cli":"tsx src/main.ts","build":"tsc","test":"tsx --test tests/*.test.ts","check":"tsc --noEmit"},"dependencies":{"@xmldom/xmldom":"^0.8.11"},"devDependencies":{"@types/node":"^24.0.0","tsx":"^4.20.0","typescript":"^5.9.0"}}
+{
+  "name": "svg-editor-lab1",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "cli": "tsx src/main.ts",
+    "build": "tsc",
+    "test": "tsx --test tests/*.test.ts",
+    "check": "tsc --noEmit",
+    "format": "prettier --write src tests package.json tsconfig.json",
+    "format:check": "prettier --check src tests package.json tsconfig.json"
+  },
+  "dependencies": {
+    "@xmldom/xmldom": "^0.8.11"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "prettier": "^3.9.10",
+    "tsx": "^4.20.0",
+    "typescript": "^5.9.0"
+  }
+}

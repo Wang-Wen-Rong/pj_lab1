@@ -1,0 +1,11 @@
+@startuml
+title SVG Editor - Phase 1
+package cli
+package application
+package domain
+package infrastructure
+cli --> application
+application --> domain
+infrastructure --> domain
+cli --> infrastructure : adapters
+@enduml
